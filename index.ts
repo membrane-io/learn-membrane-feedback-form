@@ -61,6 +61,11 @@ const BODY_STYLES = `
   justify-content: center;
   align-items: center;
   font-family: MonoRegular, Inconsolata, Consolas, Monaco, monospace;
+  background:
+    radial-gradient(#d4c9c9 1px, transparent 1px),
+    radial-gradient(#d4c9c9 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
 `;
 
 const FORM_STYLES = `
