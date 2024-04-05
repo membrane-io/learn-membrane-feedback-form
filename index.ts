@@ -6,7 +6,7 @@ export async function endpoint(req) {
       return JSON.stringify({
         status: 200,
         headers: { "Content-Type": "text/html" },
-        body: getFormHtml(),
+        body: await getFormHtml(),
       });
     case "POST":
       const params = new URLSearchParams(req.body);
@@ -26,7 +26,7 @@ export async function endpoint(req) {
   }
 }
 
-function getFormHtml() {
+async function getFormHtml() {
   return `
     <!DOCTYPE html>
     <html lang="en" style="${HTML_STYLES}">
@@ -37,11 +37,11 @@ function getFormHtml() {
     </head>
       <body style="${BODY_STYLES}">
         <main>
-          <form method="POST" action="https://tea-686-match-648-show-976-cut.hook.membrane.io" style="${FORM_STYLES}">
+          <form method="POST" action=${await nodes.process.endpointUrl()} style="${FORM_STYLES}">
             <label for="email" style="${VISUALLY_HIDDEN}">Email</label>
-            <input type="email" id="email" name="email" placeholder="Email" required style="${INPUT_STYLES}" />
+            <input type="email" id="email" name="email" placeholder="grace@hopper.co" required style="${INPUT_STYLES}" />
             <label for="feedback" style="${VISUALLY_HIDDEN}">Feedback</label>
-            <textarea id="feedback" name="feedback" placeholder="Feedback" required rows="8" style="${INPUT_STYLES}"></textarea>
+            <textarea id="feedback" name="feedback" placeholder="Your feedback..." required rows="8" style="${INPUT_STYLES}"></textarea>
             <button style="${BUTTON_STYLES}">Submit</button>
           </form>
         </main>
