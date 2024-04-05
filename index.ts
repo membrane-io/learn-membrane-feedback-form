@@ -38,7 +38,9 @@ function getFormHtml() {
       <body style="${BODY_STYLES}">
         <main>
           <form method="POST" action="https://tea-686-match-648-show-976-cut.hook.membrane.io" style="${FORM_STYLES}">
+            <label for="email" style="${VISUALLY_HIDDEN}">Email</label>
             <input type="email" id="email" name="email" placeholder="Email" required style="${INPUT_STYLES}" />
+            <label for="feedback" style="${VISUALLY_HIDDEN}">Feedback</label>
             <textarea id="feedback" name="feedback" placeholder="Feedback" required rows="8" style="${INPUT_STYLES}"></textarea>
             <button style="${BUTTON_STYLES}">Submit</button>
           </form>
@@ -100,4 +102,16 @@ const BUTTON_STYLES = `
   font-family: MonoRegular, Inconsolata, Consolas, Monaco, monospace;
   font-weight: bold;
   cursor: pointer;
+`;
+
+const VISUALLY_HIDDEN = `
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 `;
