@@ -1,0 +1,11 @@
+{
+  "schema": {
+    "types": [
+      {
+        "name": "Root",
+        "actions": []
+      }
+    ]
+  },
+  "dependencies": { "email": "email:" }
+}
