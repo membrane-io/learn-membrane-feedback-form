@@ -13,13 +13,13 @@ export async function endpoint(req) {
       const email = params.get("email");
       const feedback = params.get("feedback");
 
-      const subject = `Feedback on Membrane from ${email}`;
+      const subject = `Feedback on getting-started tutorial from ${email}`;
       await nodes.email.send({ subject, body: `${feedback}` });
 
       return JSON.stringify({
         status: 200,
-        headers: { "Content-Type": "text/plain" },
-        body: "Feedback received - thanks!",
+        headers: { "Content-Type": "text/html" },
+        body: await getFeedbackSuccessPage(),
       });
     default:
       return { status: 405, body: "Method not allowed" };
@@ -50,9 +50,32 @@ async function getFormHtml() {
   `;
 }
 
+async function getFeedbackSuccessPage() {
+  return `
+    <!DOCTYPE html>
+    <html lang="en" style="${HTML_STYLES}">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Membrane Getting Started Feedback</title>
+    </head>
+      <body style="${BODY_STYLES}">
+        <main style="${FORM_STYLES}">
+          <h1 style="${HEADING_STYLES}">Thanks for your feedback!</h1>
+        </main>
+      </body>
+    </html>
+  `;
+}
 const HTML_STYLES = `
   box-sizing: border-box;
   height: 100vh;
+`;
+
+const HEADING_STYLES = `
+  font-size: 1rem;
+  text-align: center;
+  text-wrap: balance;
 `;
 
 const BODY_STYLES = `
