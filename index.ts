@@ -13,7 +13,7 @@ export async function endpoint(req) {
       const email = params.get("email");
       const feedback = params.get("feedback");
 
-      const subject = `Feedback on getting-started tutorial from ${email}`;
+      const subject = `Feedback on learn-membrane tutorial from ${email}`;
       await nodes.email.send({ subject, body: `${feedback}` });
 
       return JSON.stringify({
@@ -33,7 +33,7 @@ async function getFormHtml() {
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Membrane Getting Started Feedback</title>
+      <title>Learn Membrane Feedback</title>
     </head>
       <body style="${BODY_STYLES}">
         <main>
@@ -41,7 +41,7 @@ async function getFormHtml() {
             <label for="email" style="${VISUALLY_HIDDEN}">Email</label>
             <input type="email" id="email" name="email" placeholder="grace@hopper.co" required style="${INPUT_STYLES}" />
             <label for="feedback" style="${VISUALLY_HIDDEN}">Feedback</label>
-            <textarea id="feedback" name="feedback" placeholder="Your feedback..." required rows="8" style="${INPUT_STYLES}"></textarea>
+            <textarea id="feedback" name="feedback" placeholder="Let us know how to make learning Membrane better..." required rows="8" style="${INPUT_STYLES}"></textarea>
             <button style="${BUTTON_STYLES}">Submit</button>
           </form>
         </main>
@@ -57,7 +57,7 @@ async function getFeedbackSuccessPage() {
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Membrane Getting Started Feedback</title>
+      <title>Learn Membrane Feedback</title>
     </head>
       <body style="${BODY_STYLES}">
         <main style="${FORM_STYLES}">
