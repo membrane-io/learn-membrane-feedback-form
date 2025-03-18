@@ -3,9 +3,12 @@
     "types": [
       {
         "name": "Root",
+        "description": "A program to handle user feedback for the learn-membrane tutorial.",
         "actions": []
       }
     ]
   },
-  "dependencies": { "email": "email:" }
+  "dependencies": {
+    "email": "sys-email:"
+  }
 }
