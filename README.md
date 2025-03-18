@@ -1,6 +1,6 @@
-# Membrane getting-started tour feedback form
+# `learn-membrane` feedback form
 
-This Membrane program is a complement to the [getting-started tour](https://github.com/pmillspaugh/membrane-getting-started).
+This Membrane program is a complement to the [learn-membrane tutorial](https://membrane.io/share/membrane/learn-membrane).
 
 The program does two things:
 
